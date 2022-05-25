@@ -55,6 +55,8 @@ int main()
 {
     int gdriver=DETECT, gmode;
     initgraph(&gdriver, &gmode, " ");
+    setbkcolor(WHITE);
+    cleardevice();
     
 
     float x1, x2, y1, y2;
@@ -72,3 +74,49 @@ int main()
     closegraph();
     return 0;
 }
+
+
+
+/* Algorithm of Bresenham’s Line Drawing Algorithm
+==================================================
+Step 1: Start.
+
+Step 2: Now, we consider Starting point as (x1, y1) and endingpoint (x2, y2).
+
+Step 3: Now, we have to calculate ?x and ?y.
+
+              ?x = x2-x1
+
+                    ?y = y2-y1
+
+              m = ?y/?x               
+
+Step 4: Now, we will calculate the decision parameter pk with following formula.
+
+                       pk = 2?y-?x
+
+Step 5: Theinitial coordinates of the line are (xk, yk), and the next coordinatesare (xk+1, yk+1). Now, we are going to calculate two cases for decision parameter pk
+
+ Case 1:  If pk < 0
+
+              Then
+
+                pk+1 =pk +2?y
+
+                xk+1 = xk +1
+
+                yk+1 = yk                           
+
+Case 2:  If pk >= 0
+
+              Then
+
+                pk+1 =pk +2?y-2?x
+
+                xk+1 =xk +1
+
+                yk+1 =yk +1                          
+
+Step 6: We will repeat step 5 until we found the ending point of the line and the total number of iterations =?x-1.
+
+Step 7: Stop. */

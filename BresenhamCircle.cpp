@@ -57,3 +57,49 @@ int main()
     closegraph();
     return 0;
 }
+
+
+
+
+
+/* Bresenham's Circle Algorithm:
+================================
+Step1: Start Algorithm
+
+Step2: Declare p, q, x, y, r, d variables
+        p, q are coordinates of the center of the circle
+        r is the radius of the circle
+
+Step3: Enter the value of r
+
+Step4: Calculate d = 3 - 2r
+
+Step5: Initialize       x=0
+          &nbsy= r
+
+Step6: Check if the whole circle is scan converted
+            If x > = y
+            Stop
+
+Step7: Plot eight points by using concepts of eight-way symmetry. The center is at (p, q). Current active pixel is (x, y).
+                putpixel (x+p, y+q)
+                putpixel (y+p, x+q)
+                putpixel (-y+p, x+q)
+                putpixel (-x+p, y+q)
+                putpixel (-x+p, -y+q)
+                putpixel (-y+p, -x+q)
+                putpixel (y+p, -x+q)
+                putpixel (x+p, -y-q)
+
+Step8: Find location of next pixels to be scanned
+            If d < 0
+            then d = d + 4x + 6
+            increment x = x + 1
+            If d ≥ 0
+            then d = d + 4 (x - y) + 10
+            increment x = x + 1
+            decrement y = y - 1
+
+Step9: Go to step 6
+
+Step10: Stop Algorithm */
