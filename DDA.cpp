@@ -24,11 +24,13 @@ void DDA(int x0, int x1, int y0, int y1) {
     x = x0;  
     y = y0;
 
-    for (int i = 0; i <= steps; i++)
+    for (int i = 1; i <= steps; i++)
     {
         putpixel(x, y, WHITE);
         x += dx;  
         y += dy; 
+
+        delay(10);
     }
     
 }
@@ -70,3 +72,40 @@ int main()
     closegraph();
     return 0;
 }
+
+
+
+/*
+
+Digital Differential Analyzer (DDA) Algorithm
+=============================================
+Step 1: Read the input of the 2 end points of the line as (x1, y1) & (x2, y2) such that x1 != x2 and y1 != y2
+Step 2: Calculate dx = x2 – x1 and dy = y2 – y1
+
+Step 3:
+
+if(dx>=dy)
+
+step=dx
+
+else
+
+step=dy
+Step 4: xin = dx / step & yin = dy / step
+
+Step 5: x = x1 + 0.5 & y = y1 + 0.5
+
+Step 6: 
+for(k = 0; k < step; k++)
+
+{
+
+x = x + xin
+
+y = y + yin
+
+putpixel(x, y)
+
+}
+
+*/

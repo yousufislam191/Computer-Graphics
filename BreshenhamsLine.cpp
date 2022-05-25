@@ -17,21 +17,22 @@ void breshenhamsLine(float x1, float x2, float y1, float y2)
 
     p = (2*dy) - dx;
 
-    while(x1 < x2)
+    while(x < x2)
     {
        if(p >= 0)
        {
-           putpixel(x, y, RED);
            p = p + 2*(dy - dx);
            y = y + 1;
        }
        else
        {
-           putpixel(x, y, RED);
-           p = p + 2*dy;
+           p = p + (2*dy);
            y = y;
        }
-        x = x + 1;
+       putpixel(x, y, RED);
+        x++;
+
+        delay(10);
     }
 }
 
